@@ -61,7 +61,6 @@ class ListTodos extends StatelessWidget {
                               return DetailScreen(id: todo.id);
                             }),
                           );
-
                         },
                         onCheckboxChanged: (_) {
                           BlocProvider.of<TodosBloc>(context).add(

@@ -18,14 +18,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
     appBar: AppBar(
-    title: Text("Flutter Todos"),
-    /* actions: [
-              FilterButton(visible: activeTab == AppTab.todos),
-              ExtraActions(),
-            ],*/
+    title: Text("To-do List"),
     ),
-    body: ListCategoryTodo(),
-    floatingActionButton: FloatingActionButton.extended(
+    body: ListCategoryTodo()
+    /*floatingActionButton: FloatingActionButton.extended(
       key: ArchSampleKeys.addTodoFab,
       label:Text("New List"),
       onPressed: () {
@@ -34,8 +30,8 @@ class HomeScreen extends StatelessWidget {
       icon: Icon(Icons.add),
     // tooltip: ArchSampleLocalizations.of(context).addTodo,
     ),
+    );*/
+
     );
-
-
-  }
+}
 }
