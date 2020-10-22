@@ -22,7 +22,6 @@ class ListCategoryTodo extends StatelessWidget {
               print("${categories.length}");
               return ListView.builder(
                 itemCount: categories.length,
-
                 itemBuilder: (context, item) {
                   return ListTile(
                   title: Text(categories[item].name),

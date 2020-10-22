@@ -7,7 +7,6 @@ import 'package:equatable/equatable.dart';
 class TodoEntity implements Equatable{
   final String id;
   final String task;
-
   final DateTime when;
   final String note;
   final bool complete;
@@ -19,7 +18,7 @@ class TodoEntity implements Equatable{
 
 
 
-  Map<String, Object> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       "id": id,
       "task": task,
@@ -34,18 +33,19 @@ class TodoEntity implements Equatable{
 
   @override
   String toString() {
-    return 'TodoEntity{id: $id, task: $task, note: $note, when: $when, complete: $complete, category: $category }';
+    return 'TodoEntity{id: $id, task: $task, note: $note, when: $when, complete: $complete, category: $category, users:$users }';
   }
 
   static TodoEntity fromJson(Map<String, dynamic> json) {
+    print("fromjson si");
     return TodoEntity(
       json["id"] as String,
       json["task"] as String,
       json["note"] as String,
-      DateTime.parse(json["when"]),
+      json["when"] == null ? DateTime.now() :DateTime.parse(json["when"] as String)  ,
       json["complete"] as bool,
       json["category"] as String,
-      json["users"].cast<String>(),
+      json["users"]?.cast<String>(),
 
     );
   }

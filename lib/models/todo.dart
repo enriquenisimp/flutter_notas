@@ -9,7 +9,7 @@ class Todo extends Equatable {
   final String task;
   final DateTime when;
   final String category;
-  final List<dynamic> users;
+  final List<String> users;
   Todo(
     {
       String id,
@@ -23,7 +23,7 @@ class Todo extends Equatable {
         this.id = id ?? Uuid().generateV4(),
         this.when= when ?? DateTime.now();
 
-  Todo copyWith({bool complete, String id, String note, String task, DateTime when, String category, List<dynamic> users}) {
+  Todo copyWith({bool complete, String id, String note, String task, DateTime when, String category, List<String> users}) {
     return Todo(
       id: id ?? this.id,
       task: task ?? this.task,

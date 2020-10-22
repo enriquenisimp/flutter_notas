@@ -23,7 +23,7 @@ class TodosRepositoryFlutter implements TodosRepository, CategoryRepository {
     print("get todos from json");
 
     return await fileStorage.loadTodos();
-  }catch(e){
+ }catch(e){
     print("get todos from wclient ${e.toString()}");
 
     final todos =await webClient.fetchTodos();
@@ -47,7 +47,7 @@ class TodosRepositoryFlutter implements TodosRepository, CategoryRepository {
       print("get category from json");
       return await fileStorage.loadCategories();
     }catch(e){
-      print("get category from webclient${e.toString()}");
+      print("get category from webclient ${e.toString()}");
 
       final todos =await webClient.fetchCategory();
       fileStorage.saveCategories(todos);

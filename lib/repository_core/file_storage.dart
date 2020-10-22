@@ -29,9 +29,11 @@ class FileStorage {
     final string = await file.readAsString();
     print(" datoos ${string}");
     final json = JsonDecoder().convert(string);
-    final todos = await  (json['todos'])
+
+    final todos = (json['todos'])
         .map<TodoEntity>((todo) => TodoEntity.fromJson(todo))
         .toList();
+    print("ahora si");
 
     return todos;
   }
