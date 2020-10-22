@@ -195,10 +195,11 @@ class DetailScreen extends StatelessWidget {
                   MaterialPageRoute(builder:
                       (BuildContext context) {
                       return AddTodoScreen(
+
                         onSave: (task, note, when, category){
                           BlocProvider.of<TodosBloc>(context)..add(
-                              TodoAdded(
-                                  Todo(task:task, when:when, note:note, category: category)
+                              TodoUpdated(
+                                  todo.copyWith(task:task, when:when, note:note, category: category)
                               )
                           );
                         },

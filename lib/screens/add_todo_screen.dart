@@ -114,7 +114,7 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
           if(_formKey.currentState.validate())
             {
               _formKey.currentState.save();
-              widget.onSave(_task, _note, _when, _category);
+              widget.onSave(_task, _note, _when, _category ?? widget.todo.category);
               Navigator.pop(context);
             }
         },
